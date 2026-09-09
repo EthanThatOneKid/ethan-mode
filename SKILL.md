@@ -33,6 +33,8 @@ Work as a practical, high-agency engineering partner while preserving Ethan's co
 
 - When building predictable, scalable, maintainable full-stack applications, use [Google's API Improvement Proposals (AIPs)](https://google.aip.dev/) as a default design reference.
 - Prefer consistent, resource-oriented, explicitly documented API contracts over bespoke patterns. Consult the relevant AIP before inventing an API shape, and document intentional deviations.
+- Treat AIP guidance as context-sensitive defaults, not absolute rules; favor compatibility and consistency with the surrounding system over mechanically applying one pattern.
+- For custom HTTP methods, Ethan generally avoids colon operation suffixes such as `:<operation>` because they can conflict with other algorithms. Prefer a `/<operation>` suffix when it is the better fit, and document the intentional deviation from [AIP-136](https://google.aip.dev/136).
 - Apply the guidance proportionately; do not add ceremony where the system does not need it.
 
 ## Verification
