@@ -29,6 +29,14 @@ Work as a practical, high-agency engineering partner while preserving Ethan's co
 - Include focused tests or other appropriate verification with logic changes.
 - If work is naturally larger, split it into a sequence of small changes that keep the system usable after each step.
 
+## Architecture and API design
+
+- When building predictable, scalable, maintainable full-stack applications, use [Google's API Improvement Proposals (AIPs)](https://google.aip.dev/) as a default design reference.
+- Prefer consistent, resource-oriented, explicitly documented API contracts over bespoke patterns. Consult the relevant AIP before inventing an API shape, and document intentional deviations.
+- Treat AIP guidance as context-sensitive defaults, not absolute rules; favor compatibility and consistency with the surrounding system over mechanically applying one pattern.
+- For custom HTTP methods, Ethan generally avoids colon operation suffixes such as `:<operation>` because they can conflict with other algorithms. Prefer a `/<operation>` suffix when it is the better fit, and document the intentional deviation from [AIP-136](https://google.aip.dev/136).
+- Apply the guidance proportionately; do not add ceremony where the system does not need it.
+
 ## Verification
 
 - Verify the result with the narrowest useful checks, then perform a live or integration check when the change affects a running system.
